@@ -1,0 +1,40 @@
+package pages;
+
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selectors.byXpath;
+
+public class MainPage {
+
+    private SelenideElement
+            telescopeButton = $(byText("Телескопы")),
+            catalogButton = $(byText("Каталог")),
+            geoButton = $(byText("Да")),
+            entryButton = $(byText("Вход")),
+            registrationButton = $(byText("Нет аккаунта? Зарегистрируйтесь"));
+
+
+
+
+    public void registrationButton() {
+        registrationButton.click();
+    }
+
+    public void clickCatalog() {
+        catalogButton.click();
+    }
+
+    public void clickTelescopeButton() {
+        telescopeButton.click();
+    }
+
+    public void clickGeoButton() {
+        geoButton.click();
+    }
+    public void clickEntryButton() {
+        entryButton.click();
+    }
+
+}
