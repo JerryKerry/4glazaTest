@@ -1,9 +1,8 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selectors.byTagAndText;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 
@@ -12,10 +11,12 @@ public class RegistrationPage {
     private SelenideElement
             firstLastName = $("input[placeholder='Имя и фамилия']"),
             inputEmail = $("input[placeholder='E-mail']"),
-            inputPhone = $("input[placeholder='Телефон']"),
-            inputPassword = $("input[placeholder='Пароль']"),
+            inputPhone = $("input[data-field='Телефон']"),
+            inputPassword = $("input[data-field='Пароль']"),
             inputPasswordAgain = $("#confirm_password"),
-            RegistrationButton = $(byText("Нет аккаунта? Зарегистрируйтесь"));
+            processingOfPersonalData = $("input[wfd-id='id10']"),
+            registrationNowButton =$("input[value='Зарегистрироваться сейчас']");
+
 
     public RegistrationPage setFirstLastName(String fullName) {
         firstLastName.click();
@@ -40,12 +41,30 @@ public class RegistrationPage {
         inputPassword.click();
         inputPassword.sendKeys(password);
 
+        System.out.println(password);
+
         return this;
     }
 
     public RegistrationPage setPasswordAgain(String password) {
         inputPasswordAgain.click();
         inputPasswordAgain.sendKeys(password);
+
+        System.out.println(password);
+
+
+        return this;
+    }
+
+    public RegistrationPage clickProcessingOfPersonalData() {
+        processingOfPersonalData.scrollTo().click();
+        processingOfPersonalData.should(Condition.visible);
+
+        return this;
+    }
+
+    public RegistrationPage clickRegistrationButton() {
+        registrationNowButton.click();
 
         return this;
     }

@@ -14,7 +14,7 @@ public class MainPage {
             entryButton = $(byText("Вход")),
             registrationButton = $(byText("Нет аккаунта? Зарегистрируйтесь"));
 
-    public void registrationButton() {
+    public void registrationButtonClick() {
         registrationButton.click();
     }
 
