@@ -1,3 +1,4 @@
+import data.DataGeneration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -5,6 +6,10 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class RegistrationTest extends TestBase {
+
+    private DataGeneration data = new DataGeneration();
+
+    String firstLastName = data.getFirstLastName();
 
     @Test
     @DisplayName("Проверка регистрации нового пользователя")
@@ -19,6 +24,10 @@ public class RegistrationTest extends TestBase {
 
         step("Кликаем на Нет аккаунта? Зарегистрируйтесь", () ->{
             mainPage.registrationButton();
+        });
+
+        step("Кликаем на Нет аккаунта? Зарегистрируйтесь", () ->{
+            registrationPage.setFirstLastName(firstLastName);
         });
     }
 }
