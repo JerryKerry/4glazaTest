@@ -109,6 +109,6 @@
 ### <img width="4%" style="vertical-align:middle" title="Selenoid" src="images/logo/Selenoid.png"> Видео пример запуска тестов в Selenoid
 
 К каждому тесту в отчете прилагается видео прогона.
-<p align="center">
-  <img title="Selenoid Video" src="images/screenshot/videoExample.gif">
-</p>
+
+https://github.com/user-attachments/assets/5119e2b9-f3db-4e12-9100-ef29c0040873
+
