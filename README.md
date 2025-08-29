@@ -5,7 +5,7 @@
 - [Запуск автотестов](#arrow_forward-запуск-автотестов)
 - [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Пример Allure-отчета](#-пример-allure-отчета)
-- [Результат успешного прогона](#-результат-успешного-прогона)
+- [Результат прогона](#-результат-успешного-прогона)
 - [Уведомления в Telegram](#-уведомления-в-telegram-с-использованием-бота)
 - [Видео примера запуска тестов в Selenoid](#-видео-пример-запуска-тестов-в-Selenoid)
 
@@ -81,14 +81,14 @@
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> Сборка в Jenkins
 [Сборка в Jenkins](https://jenkins.autotests.cloud/job/36_username_old-14_fast_project/)
 <p align="center">
-    <img title="Jenkins Build" src="images/screenshot/jenkinsBuild.png">
+    <img title="Jenkins Build" src="images/screenshot/jenkins_job.png">
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="images/logo/Allure.png"> Пример Allure-отчета
 ### Overview
 [Allure  отчет](https://jenkins.autotests.cloud/view/QA.GURU%20students/job/c36-oPalushina-qa_guru-booking/1/allure/)
 <p align="center">
-    <img title="Allure Overview" src="images/screenshot/Allure_Report.png">
+    <img title="Allure Overview" src="images/screenshot/allure.png">
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="images/logo/Allure.png"> Результат прогона
