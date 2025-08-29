@@ -22,13 +22,10 @@ public class TestBase {
 
     @BeforeAll
     static void basicBrowserSettings() {
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://4glaza.ru/";
-        Configuration.remote = "https://user1:1234" + System.getProperty("remoteUrl",
-                "@selenoid.autotests.cloud/wd/hub");
-
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
@@ -37,7 +34,6 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
     }
 
     @AfterEach
