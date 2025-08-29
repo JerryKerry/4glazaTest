@@ -59,9 +59,6 @@ public class RegistrationPage {
         inputPasswordAgain.click();
         inputPasswordAgain.sendKeys(password);
 
-        System.out.println(password);
-
-
         return this;
     }
 
