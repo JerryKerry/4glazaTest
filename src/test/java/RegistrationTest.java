@@ -29,8 +29,6 @@ public class RegistrationTest extends TestBase {
                     .setPhone(phone).setPassword(String.valueOf(password)).setPasswordAgain(String.valueOf(password));
         });
 
-        Selenide.sleep(10000);
-
         step("Одобряем обработку ПДН", () -> {
             registrationPage.clickProcessingOfPersonalData();
         });
