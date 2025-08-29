@@ -1,9 +1,11 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 
 public class RegistrationPage {
@@ -14,8 +16,15 @@ public class RegistrationPage {
             inputPhone = $("input[data-field='Телефон']"),
             inputPassword = $("input[data-field='Пароль']"),
             inputPasswordAgain = $("#confirm_password"),
-            processingOfPersonalData = $("input[wfd-id='id10']"),
-            registrationNowButton =$("input[value='Зарегистрироваться сейчас']");
+            processingOfPersonalData = $("input[class='custom-control-input']"),
+            registrationNowButton = $("input[value='Зарегистрироваться сейчас']"),
+            alertSuccess = $("div[class ='alert alert-success']");
+
+    public RegistrationPage openPage() {
+        open("auth/registration/");
+
+        return this;
+    }
 
 
     public RegistrationPage setFirstLastName(String fullName) {
@@ -31,17 +40,17 @@ public class RegistrationPage {
 
         return this;
     }
+
     public RegistrationPage setPhone(String phone) {
         inputPhone.click();
         inputPhone.sendKeys(phone);
 
         return this;
     }
+
     public RegistrationPage setPassword(String password) {
         inputPassword.click();
         inputPassword.sendKeys(password);
-
-        System.out.println(password);
 
         return this;
     }
@@ -57,14 +66,22 @@ public class RegistrationPage {
     }
 
     public RegistrationPage clickProcessingOfPersonalData() {
-        processingOfPersonalData.scrollTo().click();
-        processingOfPersonalData.should(Condition.visible);
+        processingOfPersonalData.scrollIntoView("{block: 'center', behavior: 'instant'}")  // Центрируем элемент
+
+                .click(ClickOptions.usingJavaScript());
 
         return this;
     }
 
     public RegistrationPage clickRegistrationButton() {
-        registrationNowButton.click();
+        registrationNowButton.scrollTo().hover().click();
+
+        return this;
+    }
+
+    public RegistrationPage visibleAlertSuccess() {
+        alertSuccess.shouldHave(text("Вы успешно зарегистрировались. На ваш адрес электронной почты было отправлено " +
+                "сообщение с подтверждением регистрации."));
 
         return this;
     }
