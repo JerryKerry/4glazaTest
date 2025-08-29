@@ -79,7 +79,7 @@
 
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> Сборка в Jenkins
-[Сборка в Jenkins](https://jenkins.autotests.cloud/view/QA.GURU%20students/job/c36-oPalushina-qa_guru-booking/1/)
+[Сборка в Jenkins](https://jenkins.autotests.cloud/job/36_username_old-14_fast_project/)
 <p align="center">
     <img title="Jenkins Build" src="images/screenshot/jenkinsBuild.png">
 </p>
@@ -91,7 +91,7 @@
     <img title="Allure Overview" src="images/screenshot/Allure_Report.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="images/logo/Allure.png"> Результат успешного прогона
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="images/logo/Allure.png"> Результат прогона
 ### Overview
 
 <p align="center">
