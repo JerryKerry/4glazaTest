@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Selenide;
 import data.DataGeneration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -27,6 +28,8 @@ public class RegistrationTest extends TestBase {
             registrationPage.setFirstLastName(firstLastName).setEmailName(email)
                     .setPhone(phone).setPassword(String.valueOf(password)).setPasswordAgain(String.valueOf(password));
         });
+
+        Selenide.sleep(10000);
 
         step("Одобряем обработку ПДН", () -> {
             registrationPage.clickProcessingOfPersonalData();

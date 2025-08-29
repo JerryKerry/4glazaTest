@@ -56,15 +56,14 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setPasswordAgain(String password) {
-        inputPasswordAgain.click();
-        inputPasswordAgain.sendKeys(password);
+        inputPasswordAgain.scrollIntoView("{block: 'center', behavior: 'instant'}").click();
+        inputPasswordAgain.scrollTo().sendKeys(password);
 
         return this;
     }
 
     public RegistrationPage clickProcessingOfPersonalData() {
-        processingOfPersonalData.scrollIntoView("{block: 'center', behavior: 'instant'}")  // Центрируем элемент
-
+        processingOfPersonalData.scrollIntoView("{block: 'center', behavior: 'instant'}")
                 .click(ClickOptions.usingJavaScript());
 
         return this;
