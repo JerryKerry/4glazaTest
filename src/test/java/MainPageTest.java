@@ -11,7 +11,7 @@ public class MainPageTest extends TestBase {
     private final String registrationUrl = "https://4glaza.ru/auth/registration/";
 
     @Test
-    @Tag("SMOKE")
+    @Tag("smoke")
     @DisplayName("Проверка редиректа на страницу авторизации ")
     void redirectToRegistrationPage() {
 
@@ -26,7 +26,7 @@ public class MainPageTest extends TestBase {
     }
 
     @Test
-    @Tag("SMOKE")
+    @Tag("smoke")
     @DisplayName("Проверка информации в разделе 'О магазине' на странице 'О компании'")
     void mainPageTest() {
 

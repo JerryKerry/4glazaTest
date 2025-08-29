@@ -14,7 +14,7 @@ public class RegistrationTest extends TestBase {
     String phone = data.getPhone();
 
     @Test
-    @Tag("SMOKE")
+    @Tag("smoke")
     @DisplayName("Проверка создания нового пользователя")
     void registration() {
         String password = data.getPassword();

@@ -11,7 +11,7 @@ public class TelescopeTest extends TestBase {
     private final String telescopeUrl = "https://4glaza.ru/katalog/teleskopy/";
 
     @Test
-    @Tag("SMOKE")
+    @Tag("smoke")
     @DisplayName("Проверка перехода в каталог телескопов")
     void telescopeCatalog() {
 
