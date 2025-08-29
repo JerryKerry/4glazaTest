@@ -8,29 +8,21 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainPage {
 
     private SelenideElement
-            telescopeButton = $(byText("Телескопы")),
             catalogButton = $(byText("Каталог")),
-            geoButton = $(byText("Да")),
             entryButton = $(byText("Вход")),
-            registrationButton = $(byText("Нет аккаунта? Зарегистрируйтесь"));
+            registrationButton = $(byText("Нет аккаунта? Зарегистрируйтесь")),
+            telescopeCatalog = $("a[href='/katalog/teleskopy/']"),
+            companyButton = $("a[href='/o-companii/']");
 
-    public void registrationButtonClick() {
-        registrationButton.click();
-    }
 
-    public void clickCatalog() {
-        catalogButton.click();
-    }
+    public MainPage registrationButtonClick() {registrationButton.click(); return this;}
 
-    public void clickTelescopeButton() {
-        telescopeButton.click();
-    }
+    public MainPage clickCatalog() {catalogButton.click(); return this;}
 
-    public void clickGeoButton() {
-        geoButton.click();
-    }
-    public void clickEntryButton() {
-        entryButton.click();
-    }
+    public MainPage clickEntryButton() {entryButton.click(); return this;}
+
+    public MainPage clickCatalogTelescopeButton() {telescopeCatalog.click(); return this;}
+
+    public MainPage clickCompanyButton() {companyButton.click(); return this;}
 
 }
