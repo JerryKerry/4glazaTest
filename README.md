@@ -95,7 +95,7 @@
 ### Overview
 
 <p align="center">
-<img title="Allure Overview" src="images/screenshot/ResultsTest.png">
+<img title="Allure Overview" src="images/screenshot/case.png">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="images/logo/Telegram.png"> Уведомления в Telegram с использованием бота
@@ -103,7 +103,7 @@
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="images/screenshot/TelegramNotifications.png">
+<img width="70%" title="Telegram Notifications" src="images/screenshot/telega.png">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Selenoid" src="images/logo/Selenoid.png"> Видео пример запуска тестов в Selenoid
