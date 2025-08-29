@@ -5,9 +5,9 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.CompanyPage;
 import pages.RegistrationPage;
 import pages.MainPage;
 
@@ -18,13 +18,16 @@ public class TestBase {
 
     MainPage mainPage = new MainPage();
     RegistrationPage registrationPage = new RegistrationPage();
+    CompanyPage companyPage = new CompanyPage();
 
-    @BeforeAll
-    static void basicBrowserSettings() {
+    @BeforeEach
+    void basicBrowserSettings() {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.pageLoadStrategy = "eager";
         Configuration.browser = System.getProperty("browser", "chrome");
-        //Configuration.remote = "https://user1:1234" + System.getProperty("remoteUrl", "@selenoid.autotests.cloud/wd/hub");
+        Configuration.baseUrl = "https://4glaza.ru/";
+        Configuration.remote = "https://user1:1234" + System.getProperty("remoteUrl",
+                "@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -33,11 +36,8 @@ public class TestBase {
         ));
 
         Configuration.browserCapabilities = capabilities;
-    }
-
-    @BeforeEach
-    void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
     }
 
     @AfterEach
